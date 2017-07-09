@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RPi Camera</title>
+
+    <script>
+    window.setInterval(function()
+    {
+        document.getElementById('picture').src = "/static/image.jpg?random="+new Date().getTime();
+    }, 1000);
+    </script>
+</head>
+
+<body>
+<h1>View the Raspberry Pi Camera!</h1>
+
+<img src="/static/image.jpg" id="picture" alt="The image" height="480" width="640"/>
+
+<form action="/button" method="post">
+                <input type="submit" name="takepic" value="Take a photo">
+            </form>
+
+</body>
+</html>
